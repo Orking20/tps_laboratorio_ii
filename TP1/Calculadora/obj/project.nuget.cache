@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SB6za9qz1Ot0KmSkMF6tQUzPUMCt8J6/ckSYuaGmfZlvzG/2GMhu0zM81lfagxXb9i2I0kIjiI9sLjjZ+yZtFQ==",
+  "dgSpecHash": "fViOlwV/DBpjofNSFWYTwiYLHTIvIEQbANleH9ZAAJsCttsylCUSBB5CS5VYUn9f8pKe2/6jorp0FtJEsHi/yQ==",
   "success": true,
-  "projectFilePath": "D:\\UTN\\Segundo cuatrimestre\\Programacion II\\TrabajosPracticos\\TP1\\Calculadora\\Calculadora.csproj",
+  "projectFilePath": "D:\\UTN\\Segundo cuatrimestre\\Programacion II\\TrabajosPracticos\\TP1\\Calculadora\\FormCalculadora.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
