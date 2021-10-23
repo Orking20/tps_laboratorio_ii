@@ -27,9 +27,9 @@ namespace Entidades
         /// <summary>
         /// Inicializa numero en 0
         /// </summary>
-        public Operando()
+        public Operando() : this(0)
         {
-            Numero = "0";
+            
         }
 
         /// <summary>
