@@ -1,0 +1,442 @@
+#total{
+top:0;
+position:relative;
+width:800px;
+left:50%;
+margin-left:-400px;
+
+}
+
+A:link {COLOR: #000033;font-weight:bold; TEXT-DECORATION: none}
+  A:visited {COLOR: #000033;font-weight:bold; TEXT-DECORATION: none}
+  A:active {COLOR: #000033;font-weight:bold;TEXT-DECORATION: none}
+  A:hover {COLOR: midnightblue;font-weight:bold; TEXT-DECORATION: none}
+
+
+
+html { 
+  background: url('fondonieve.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+  width:100%;
+}
+
+table{font-size:14px;padding:0;border-collapse:collapse;margin-top:1em auto;}
+td,tr{border:1px solid grey;margin:0;padding:1ex;text-indent:0}
+input,textarea{border:1px solid grey;margin-top:1ex;padding-left:1ex;padding-right:1ex;}
+select{border:1px solid grey;margin-top:1ex;}
+p{text-indent:25px;}
+.cajatexto_pequena{
+width:100%;
+height:40px;
+}
+
+@font-face
+{
+font-family: espadanegra;
+src: url('dominica.ttf');
+}
+.fuenteespadanegra{
+font-family:espadanegra;
+}
+.cajatexto_grande{
+width:100%;
+height:400px;
+}
+
+
+.input_largo{
+width:100%;
+}
+
+#cabecero{
+
+height:135px;
+width:800px;
+
+}
+#cabecero img{
+width:80px;
+}
+#cabecero #im_der{
+position:absolute;
+left:500px;
+
+}
+#cabecero #im_izq{
+position:absolute;
+left:30px;
+display:none;
+}
+
+#cabecero #titulo{
+position:absolute;
+left:115px;
+top:15px;
+font-size:40px;
+width:570px;
+height:110px;
+text-align:center;
+background-image:url('logohermanos.png');
+background-repeat:no-repeat;
+}
+#cabecero #titulo span{
+
+visibility:hidden;  
+}
+
+#login{
+background-image:url('/texturas/Snow0101_1_S.jpg');
+border-top:1px solid black;
+border-left:1px solid black;
+ z-index:2;
+width:121px;
+min-height:140px;
+position:absolute;
+left:0px;
+top:145px;
+}
+
+#login #login_iden{
+text-indent:3px;  
+font-size:12px;  
+}
+#login #login_ima{
+position:relative;  
+top:0px;
+margin:0px;
+left:10px;
+border:1px solid black;
+width:100px;
+height:100px;
+background-repeat:no-repeat;
+background-position:center center;
+}
+
+#login #login_nombre{
+position:absolute;
+top:12px;
+left:6px;
+font-size:12px;
+}
+
+#login #login_n_nombre{
+position:absolute;
+top:5px;
+left:47px;
+width:66px;
+}
+
+#login #login_pass{
+position:absolute;
+top:44px;
+left:6px;
+font-size:12px;
+}
+
+#login #login_n_pass2{
+position:absolute;
+top:66px;
+left:47px;
+width:66px;
+}
+
+#login #login_pass2{
+position:absolute;
+top:74px;
+left:6px;
+font-size:12px;
+}
+
+#login #login_n_pass{
+position:absolute;
+top:35px;
+left:47px;
+width:66px;
+}
+
+#login #login_n_enviar{
+position:absolute;
+top:65px;
+left:47px;
+ width:66px;
+}
+
+
+#login #login_n_crear{
+position:absolute;
+top:97px;
+left:7px;
+width:50px;
+}
+
+
+#login #login_mensaje{
+position:absolute;
+top:95px;
+left:5px;
+font-size:14px;
+}
+
+
+
+#login input{
+font-size:12px;
+
+}
+#login #login_mensaje_b{
+font-size:12px;
+width:110px;
+
+}
+#login #login_mensaje_cr{
+position:absolute;
+top:100px;
+left:64px;
+font-size:12px;
+color:red;
+}
+
+#login img{
+position:absolute;
+top:15px;
+width:110px;
+left:50px;
+}
+
+
+.indice{
+background-image:url('/texturas/Ice0038_1_S.jpg');
+border:1px solid black;
+z-index:3px;
+margin:0px;
+padding:0px;
+width:121px;
+position:absolute;
+top:285px;
+-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+.indice li{
+text-align:center;
+font-size:14px;
+list-style:none;
+margin-top:5px;
+margin-bottom:5px;
+
+}
+.indice li a:visited{COLOR:#222222}
+.indice li a:link{COLOR:#222222}
+.indice li a:active{COLOR:#222222}
+.indice li a:hover{COLOR:white}
+
+.indice #sello_indice{
+width:100px;
+height:210px;                     
+  margin-left:10px;
+background-image:url('hjen_logo2.png');  
+background-repeat:no-repeat;  
+}
+
+
+#cuerpo{
+background-image:url('/texturas/Snow0101_1_S.jpg');
+border:1px solid black;
+position:absolute;
+top:145px;
+left:120px;
+width:680px;
+
+font-size:14px;
+
+
+-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+#subcuerpo{
+text-indent:30px;
+width:640px;
+margin:15px;
+}
+
+#subcuerpo p{
+margin-top:20px;
+margin-bottom:20px;
+}
+
+.tit_vir{
+font-size:18px;
+margin-right:10px;
+}
+
+
+.faq_pre{
+padding-top:50px;
+font-size:16px;
+}
+
+.subtit{
+font-size:20px;
+}
+
+
+
+
+
+#post{
+border:1px solid gray;
+margin-bottom:10px;
+text-indent:0px;
+position:relative;
+padding:10px;
+}
+#post #titulo{
+font-size:14px;
+
+padding:10px;
+width:400px;
+
+}
+
+#post #fecham{
+font-size:14px;
+
+padding-left:10px;
+width:400px;
+
+}
+
+#post #fecha{
+position:absolute;
+
+width:170px;
+padding:10px;
+left:440px;
+top:10px;
+
+}
+#post #autor{
+
+padding:10px;
+}
+#post #texto_limitado{
+position:relative;
+
+margin:10px;
+width:400px;
+}
+
+
+#post #texto{
+position:relative;
+margin:10px;
+}
+
+#post #texto img{
+max-width:600px;
+}
+
+#post #votacion{
+position:relative;
+top:-30px;
+left:500px;
+width:100px;
+}
+
+#postcom{
+padding:20px;
+border:1px solid gray;
+font-size:16px;
+font-weight:bold;
+}
+
+#subsec{
+padding:10px;
+border:1px solid gray;
+margin-top:10px;
+}
+#enciclopedia #titulo{
+font-size:20px;
+text-align:center;
+padding:0px;
+padding-bottom:20px;
+
+}
+
+#atributos{
+position:relative;
+float:right;
+width:230px;
+margin-left:10px;
+}
+#atributos td{
+font-size:12px;
+padding:2px;
+margin:0px;
+text-indent:0px;
+}
+.galeria
+{
+margin:0px;
+padding:0px;
+}
+.galeria li
+{
+padding:0px;
+margin:0px;
+list-style-type:none;
+float:left;
+width:200px;
+margin-bottom:30px;
+height:300px;
+text-align:center;
+}
+.galeria li img
+{
+border:1px solid gray;
+
+}
+
+#eper{
+width:410px;
+/*border:0;*/
+/*background-image:url('Paper0007_S.jpg');*/ 
+}
+#eper tr{
+border:0px;
+}
+
+#eper td{
+border:0px;
+}
+/*** bbcode empieza ***/
+.bold {font-weight: bold;}
+.italics {font-style: italic;}
+.underline {text-decoration: underline;}
+.strikethrough {text-decoration: line-through;}
+.overline {text-decoration: overline;}
+
+
+
+/*
+.sized {font-size: }
+*/
+.quotecodeheader {font-family: Verdana, arial, helvetica, sans-serif;font-size: 12px;font-weight: bold;}
+.codebody {background-color: #FFFFFF;font-family: Courier new, courier, mono;font-size: 12px;color: #006600;border: 1px solid #BFBFBF;}
+.quotebody {background-color: #FFFFFF;font-family: Courier new, courier, mono;font-size: 12px;color: #660002;border: 1px solid #BFBFBF;}
+.listbullet {list-style-type: disc;list-style-position: inside;}
+.listdecimal {list-style-type: decimal;list-style-position: inside;}
+.listlowerroman {list-style-type: lower-roman;list-style-position: inside;}
+.listupperroman {list-style-type: upper-roman;list-style-position: inside;}
+.listloweralpha {list-style-type: lower-alpha;list-style-position: inside;}
+.listupperalpha {list-style-type: upper-alpha;list-style-position: inside;}
+/*** bbcode acaba ***/
