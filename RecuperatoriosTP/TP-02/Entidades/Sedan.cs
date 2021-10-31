@@ -24,12 +24,22 @@ namespace Entidades
             this.tipo = ETipo.CuatroPuertas;
         }
 
+        /// <summary>
+        /// Inicializa las variables del Sedan
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
             : base(marca, chasis, color)
         {
             this.tipo = tipo;
         }
 
+        /// <summary>
+        /// Indica si tiene 4 o 5 puertas
+        /// </summary>
         public enum ETipo
         {
             CuatroPuertas,
@@ -47,13 +57,16 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Muestra las características del Sedan
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
+            sb.Append(base.Mostrar());
             sb.AppendLine("TIPO : " + this.tipo);
             sb.AppendLine("");
             sb.AppendLine("---------------------");

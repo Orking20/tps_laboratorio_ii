@@ -14,6 +14,9 @@ namespace Entidades
         private List<Vehiculo> vehiculos;
         private int espacioDisponible;
 
+        /// <summary>
+        /// Indica el tipo de vehículo
+        /// </summary>
         public enum ETipo
         {
             Ciclomotor,

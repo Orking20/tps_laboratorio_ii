@@ -15,6 +15,12 @@ namespace Entidades
         string chasis;
         ConsoleColor color;
 
+        /// <summary>
+        /// Inicializa las variables del vehículo
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Vehiculo(EMarca marca, string chasis, ConsoleColor color)
         {
             this.marca = marca;
@@ -22,6 +28,9 @@ namespace Entidades
             this.color = color;
         }
 
+        /// <summary>
+        /// Indica la marca del vehículo
+        /// </summary>
         public enum EMarca
         {
             Chevrolet,
@@ -32,6 +41,10 @@ namespace Entidades
             Honda,
             HarleyDavidson
         }
+
+        /// <summary>
+        /// Indica el tamaño del vehículo
+        /// </summary>
         public enum ETamanio
         {
             Chico,
@@ -53,14 +66,20 @@ namespace Entidades
             return (string)this;
         }
 
-        public static explicit operator string (Vehiculo p)
+        /// <summary>
+        /// Sobrecargo el string para que devuelva un string con algunas
+        /// características de un vehículo
+        /// </summary>
+        /// <param name="vehiculo"></param>
+        public static explicit operator string (Vehiculo vehiculo)
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("CHASIS: {0}\r\n", p.chasis);
-            sb.AppendFormat("MARCA : {0}\r\n", p.marca.ToString());
-            sb.AppendFormat("COLOR : {0}\r\n", p.color.ToString());
-            sb.AppendLine("---------------------");
+            sb.AppendFormat("CHASIS: {0}\r\n", vehiculo.chasis);
+            sb.AppendFormat("MARCA : {0}\r\n", vehiculo.marca.ToString());
+            sb.AppendFormat("COLOR : {0}\r\n", vehiculo.color.ToString());
+            sb.AppendLine("---------------------\n");
+            sb.AppendFormat("TAMAÑO : {0}", vehiculo.Tamanio);
 
             return sb.ToString();
         }
