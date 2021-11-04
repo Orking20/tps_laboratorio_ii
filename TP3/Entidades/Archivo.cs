@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
     public static class Archivo
     {
-        public static void Escribir(List<Ejercito<string, string, string>> ejercitos, out string error)
+        public static void EscribirCsv(List<Ejercito<string, string>> ejercitos, string nombreArchivo, out string error)
         {
             string path;
             StringBuilder stringBuilder = new StringBuilder();
@@ -23,23 +26,21 @@ namespace Entidades
                     Directory.CreateDirectory(path);
                 }
 
-                using (StreamWriter escritor = new StreamWriter($"{path}\\Ejercitos.csv"))
+                using (StreamWriter escritor = new StreamWriter(Path.Combine(path, nombreArchivo)))
                 {
                     escritor.WriteLine("ID;NOMBRE;NACION;TIPO;AUTONOMIA;CANTIDAD");
 
                     for (int i = 0; i < ejercitos.Count; i++)
                     {
                         escritor.WriteLine($"{ejercitos[i].Id};{ejercitos[i].Nombre};{ejercitos[i].Nacion};{ejercitos[i].Tipo};{ejercitos[i].Autonomia};{ejercitos[i].CantMaxEjercito}");
+
+                        Ejercito<string, string>.IdEstatico++;
                     }
                 }
             }
             catch (UnauthorizedAccessException)
             {
                 stringBuilder.Append("Usted no tiene autorización para acceder a esta ruta.");
-            }
-            catch (NotSupportedException)
-            {
-                stringBuilder.Append("Un método invocado no es compatible o se está intentando leer, buscar o escribir en una secuencia que no admite la funcionalidad invocada.");
             }
             catch (DirectoryNotFoundException)
             {
@@ -49,44 +50,28 @@ namespace Entidades
             {
                 stringBuilder.Append("Una ruta o nombre de archivo es demasiado largo.");
             }
-            catch (IOException)
-            {
-                stringBuilder.Append("Se ha producido un error de entrada/salida.");
-            }
-            catch (ArgumentNullException)
-            {
-                stringBuilder.Append("Se ha pasado una referencia nula a un método que no la acepta como argumento válido.");
-            }
-            catch (ArgumentException)
-            {
-                stringBuilder.Append("Uno de los argumentos proporcionados a un método no es válido.");
-            }
-            catch (System.Security.SecurityException)
-            {
-                stringBuilder.Append("Se ha detectado un error de seguridad.");
-            }
             catch (Exception)
             {
-                stringBuilder.Append("Ha ocurrido un error inesperado.");
+                stringBuilder.Append("Ha ocurrido un error al exportar el archivo.");
             }
 
             error = stringBuilder.ToString();
         }
 
-        public static List<Ejercito<string, string, string>> Leer(out string error)
+        public static List<Ejercito<string, string>> LeerCsv(out string error)
         {
             string path;
             string datosEjercito;
             string aux;
             string[] arrayAux;
             int i = 0;
-            Ejercito<string, string, string> ejercitoNuevo;
-            List<Ejercito<string, string, string>> ejercitos = new List<Ejercito<string, string, string>>();
+            Ejercito<string, string> ejercitoNuevo;
+            List<Ejercito<string, string>> ejercitos = new List<Ejercito<string, string>>();
             StringBuilder stringBuilder = new StringBuilder();
 
             try
             {
-                path = $"{Directory.GetCurrentDirectory()}\\Ejercitos.csv";
+                path = Path.Combine(Directory.GetCurrentDirectory(), "Ejercitos.csv");
 
                 using (StreamReader lector = new StreamReader(path))
                 {
@@ -114,9 +99,9 @@ namespace Entidades
                             else if (aux != "ID;NOMBRE;NACION;TIPO;AUTONOMIA;CANTIDAD")
                             {
                                 arrayAux = aux.Split(';');
-                                ejercitoNuevo = new Ejercito<string, string, string>(int.Parse(arrayAux[0]), arrayAux[1], arrayAux[2], arrayAux[3], arrayAux[4], int.Parse(arrayAux[5]));
+                                ejercitoNuevo = new Ejercito<string, string>(int.Parse(arrayAux[0]), arrayAux[1], arrayAux[2], arrayAux[3], arrayAux[4], int.Parse(arrayAux[5]));
                                 ejercitos.Add(ejercitoNuevo);
-                                Ejercito<string, string, string>.IdEstatico++;
+                                Ejercito<string, string>.IdEstatico++;
                                 i++;
                                 break;
                             }
@@ -133,9 +118,102 @@ namespace Entidades
             {
                 stringBuilder.Append("Usted no tiene autorización para acceder a esta ruta.");
             }
-            catch (NotSupportedException)
+            catch (DirectoryNotFoundException)
             {
-                stringBuilder.Append("Un método invocado no es compatible o se está intentando leer, buscar o escribir en una secuencia que no admite la funcionalidad invocada.");
+                stringBuilder.Append("No se pudo encontrar parte de un archivo o directorio.");
+            }
+            catch (FileNotFoundException)
+            {
+                stringBuilder.Append("Fallo al intentar acceder al archivo especificado, asegúrese de que el archivo existe en la ruta indicada.");
+            }
+            catch (FormatException)
+            {
+                stringBuilder.Append("Hubo un error al intentar pasar un número a texto.\nAsegúrese de que los datos en el archivo están bien cargados");
+            }
+            catch (OverflowException)
+            {
+                stringBuilder.Append("Hubo un desbordamiento de algún número.\nAsegúrese de que los datos en el archivo están bien cargados");
+            }
+            catch (Exception)
+            {
+                stringBuilder.Append("Ha ocurrido un error al importar el archivo.");
+            }
+
+            error = stringBuilder.ToString();
+
+            return ejercitos;
+        }
+
+        public static void EscribirXml(List<Ejercito<string, string>> ejercitos, out string error)
+        {
+            string path;
+            StringBuilder stringBuilder = new StringBuilder();
+
+            try
+            {
+                path = Directory.GetCurrentDirectory();
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                using (XmlTextWriter escritor = new XmlTextWriter($"{path}\\EjercitosXml.xml", Encoding.UTF8))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Ejercito<string, string>>));
+                    serializer.Serialize(escritor, ejercitos);
+
+                    foreach (Ejercito<string, string> ejercito in ejercitos)
+                    {
+                        Ejercito<string, string>.IdEstatico++;
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                stringBuilder.Append("Usted no tiene autorización para acceder a esta ruta.");
+            }
+            catch (DirectoryNotFoundException)
+            {
+                stringBuilder.Append("No se pudo encontrar parte de un archivo o directorio.");
+            }
+            catch (PathTooLongException)
+            {
+                stringBuilder.Append("Una ruta o nombre de archivo es demasiado largo.");
+            }
+            catch (Exception)
+            {
+                stringBuilder.Append("Ha ocurrido un error al exportar el archivo.");
+            }
+
+            error = stringBuilder.ToString();
+        }
+
+        public static List<Ejercito<string, string>> LeerXml(out string error)
+        {
+            string path;
+            List<Ejercito<string, string>> ejercitos = new List<Ejercito<string, string>>();
+            StringBuilder stringBuilder = new StringBuilder();
+
+            try
+            {
+                path = Path.Combine(Directory.GetCurrentDirectory(), "EjercitosXml.xml");
+
+                using (XmlTextReader lector = new XmlTextReader(path))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Ejercito<string, string>>));
+
+                    ejercitos = (List<Ejercito<string, string>>)serializer.Deserialize(lector);
+
+                    foreach (Ejercito<string, string> ejercito in ejercitos)
+                    {
+                        Ejercito<string, string>.IdEstatico = ejercito.Id;
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                stringBuilder.Append("Usted no tiene autorización para acceder a esta ruta.");
             }
             catch (DirectoryNotFoundException)
             {
@@ -143,23 +221,117 @@ namespace Entidades
             }
             catch (FileNotFoundException)
             {
-                stringBuilder.Append("Fallo al intentar acceder al archivo especificad, asegúrese de que el archivo existe en la ruta indicada");
+                stringBuilder.Append("Fallo al intentar acceder al archivo especificado, asegúrese de que el archivo existe en la ruta indicada.");
             }
-            catch (IOException)
+            catch (FormatException)
             {
-                stringBuilder.Append("Se ha producido un error de entrada/salida.");
+                stringBuilder.Append("Hubo un error al intentar pasar un número a texto.\nAsegúrese de que los datos en el archivo están bien cargados");
             }
-            catch (ArgumentNullException)
+            catch (OverflowException)
             {
-                stringBuilder.Append("Se ha pasado una referencia nula a un método que no la acepta como argumento válido.");
-            }
-            catch (ArgumentException)
-            {
-                stringBuilder.Append("Uno de los argumentos proporcionados a un método no es válido.");
+                stringBuilder.Append("Hubo un desbordamiento de algún número.\nAsegúrese de que los datos en el archivo están bien cargados");
             }
             catch (Exception)
             {
-                stringBuilder.Append("Ha ocurrido un error inesperado.");
+                stringBuilder.Append("Ha ocurrido un error al importar el archivo.");
+            }
+
+            error = stringBuilder.ToString();
+
+            return ejercitos;
+        }
+
+        public static void EscribirJson(List<Ejercito<string, string>> ejercitos, out string error)
+        {
+            string path;
+            string textoSerializado;
+            StringBuilder stringBuilder = new StringBuilder();
+
+            try
+            {
+                path = Directory.GetCurrentDirectory();
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                textoSerializado = JsonSerializer.Serialize(ejercitos);
+                File.WriteAllText($"{path}\\EjercitosJson.json", textoSerializado);
+
+                foreach (Ejercito<string, string> ejercito in ejercitos)
+                {
+                    Ejercito<string, string>.IdEstatico++;
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                stringBuilder.Append("Usted no tiene autorización para acceder a esta ruta.");
+            }
+            catch (DirectoryNotFoundException)
+            {
+                stringBuilder.Append("No se pudo encontrar parte de un archivo o directorio.");
+            }
+            catch (PathTooLongException)
+            {
+                stringBuilder.Append("Una ruta o nombre de archivo es demasiado largo.");
+            }
+            catch (Exception)
+            {
+                stringBuilder.Append("Ha ocurrido un error al exportar el archivo.");
+            }
+
+            error = stringBuilder.ToString();
+        }
+
+        public static List<Ejercito<string, string>> LeerJson(out string error)
+        {
+            string path;
+            string infoArchivo;
+            List<Ejercito<string, string>> ejercitos = new List<Ejercito<string, string>>();
+            StringBuilder stringBuilder = new StringBuilder();
+
+            try
+            {
+                path = Directory.GetCurrentDirectory();
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                infoArchivo = File.ReadAllText($"{path}\\EjercitosJson.json");
+
+                ejercitos = JsonSerializer.Deserialize<List<Ejercito<string, string>>>(infoArchivo);
+
+                foreach (Ejercito<string, string> ejercito in ejercitos)
+                {
+                    Ejercito<string, string>.IdEstatico = ejercito.Id;
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                stringBuilder.Append("Usted no tiene autorización para acceder a esta ruta.");
+            }
+            catch (DirectoryNotFoundException)
+            {
+                stringBuilder.Append("No se pudo encontrar parte de un archivo o directorio.");
+            }
+            catch (FileNotFoundException)
+            {
+                stringBuilder.Append("Fallo al intentar acceder al archivo especificado, asegúrese de que el archivo existe en la ruta indicada.");
+            }
+            catch (FormatException)
+            {
+                stringBuilder.Append("Hubo un error al intentar pasar un número a texto.\nAsegúrese de que los datos en el archivo están bien cargados");
+            }
+            catch (OverflowException)
+            {
+                stringBuilder.Append("Hubo un desbordamiento de algún número.\nAsegúrese de que los datos en el archivo están bien cargados");
+            }
+            catch (Exception)
+            {
+                stringBuilder.Append("Ha ocurrido un error al importar el archivo.");
             }
 
             error = stringBuilder.ToString();

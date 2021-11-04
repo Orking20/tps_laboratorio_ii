@@ -1,0 +1,19 @@
+ID;NOMBRE;NACION;TIPO;AUTONOMIA;CANTIDAD
+4;Hermanos iluminados;Dormenia;Infanteria_media_de_asalto;Completa;1000
+7;Primera cohorte;Eride;Infanteria_pesada;Completa;950
+8;Segunda cohorte;Eride;Infanteria_ligera;Completa;900
+9;Tercera cohorte;Eride;Infanteria_ligera;Completa;1100
+10;Cuarta cohorte;Eride;Infanteria_pesada;Completa;4500
+11;Quinta cohorte;Eride;Infanteria_ligera;Completa;900
+12;Sexta cohorte;Eride;Infanteria_pesada;Completa;950
+13;Septima cohorte;Eride;Infanteria_ligera;Completa;1000
+14;Octava cohorte;Eride;Infanteria_de_soporte;Completa;850
+15;Novena cohorte;Eride;Infanteria_ligera;Completa;900
+19;Zobagar adia;Tirtie;Infanteria_ligera;Completa;800
+20;Zobagar zitakoda;Tirtie;Mulenevor;Completa;80
+21;Zobagar Urke;Tirtie;Infanteria_ligera;Completa;600
+26;Exploradores del clan del águila;Gunear;Arqueria_ligera;Completa;1000
+30;Tahlaned de la serpiente;Tribus;Infanteria_ligera;Completa;800
+31;Tahlaned del antílope;Tribus;Caballeria_ligera;Completa;700
+32;Tahlaned de la iguana;Tribus;Infanteria_ligera;Completa;500
+33;Tahlaned de la araña;Tribus;Infanteria_ligera;Completa;600

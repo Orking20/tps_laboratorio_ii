@@ -4,7 +4,16 @@
     <Compile Update="FrmAgregarEjercito.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmExportar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmHermandad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmImportar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmModificarEliminarEjercito.cs">

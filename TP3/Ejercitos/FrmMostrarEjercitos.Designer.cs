@@ -64,6 +64,7 @@ namespace Formularios
             this.Tipo,
             this.Autonomía,
             this.Número});
+            this.dgvEjercitos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvEjercitos.Location = new System.Drawing.Point(153, 79);
             this.dgvEjercitos.Name = "dgvEjercitos";
             this.dgvEjercitos.RowTemplate.Height = 25;

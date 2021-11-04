@@ -35,6 +35,7 @@ namespace Ejercitos
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.btnImportar = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
+            this.btnFiltro = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnModificarEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@ namespace Ejercitos
             // 
             // picLogo
             // 
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.Location = new System.Drawing.Point(0, 0);
@@ -70,6 +72,7 @@ namespace Ejercitos
             // 
             this.pnlBotones.Controls.Add(this.btnImportar);
             this.pnlBotones.Controls.Add(this.btnExportar);
+            this.pnlBotones.Controls.Add(this.btnFiltro);
             this.pnlBotones.Controls.Add(this.btnMostrar);
             this.pnlBotones.Controls.Add(this.btnModificarEliminar);
             this.pnlBotones.Controls.Add(this.btnAgregar);
@@ -80,13 +83,14 @@ namespace Ejercitos
             // 
             // btnImportar
             // 
+            this.btnImportar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnImportar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnImportar.FlatAppearance.BorderSize = 0;
             this.btnImportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(84)))), ((int)(((byte)(95)))));
             this.btnImportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(147)))), ((int)(((byte)(162)))));
             this.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnImportar.Location = new System.Drawing.Point(0, 276);
+            this.btnImportar.Location = new System.Drawing.Point(0, 345);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(194, 69);
             this.btnImportar.TabIndex = 4;
@@ -96,13 +100,14 @@ namespace Ejercitos
             // 
             // btnExportar
             // 
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnExportar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnExportar.FlatAppearance.BorderSize = 0;
             this.btnExportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(84)))), ((int)(((byte)(95)))));
             this.btnExportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(147)))), ((int)(((byte)(162)))));
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExportar.Location = new System.Drawing.Point(0, 207);
+            this.btnExportar.Location = new System.Drawing.Point(0, 276);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(194, 69);
             this.btnExportar.TabIndex = 3;
@@ -110,8 +115,26 @@ namespace Ejercitos
             this.btnExportar.UseVisualStyleBackColor = true;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // btnFiltro
+            // 
+            this.btnFiltro.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnFiltro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFiltro.FlatAppearance.BorderSize = 0;
+            this.btnFiltro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(84)))), ((int)(((byte)(95)))));
+            this.btnFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(147)))), ((int)(((byte)(162)))));
+            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFiltro.Location = new System.Drawing.Point(0, 207);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(194, 69);
+            this.btnFiltro.TabIndex = 5;
+            this.btnFiltro.Text = "Filtro";
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
             // btnMostrar
             // 
+            this.btnMostrar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnMostrar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMostrar.FlatAppearance.BorderSize = 0;
             this.btnMostrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(84)))), ((int)(((byte)(95)))));
@@ -128,6 +151,7 @@ namespace Ejercitos
             // 
             // btnModificarEliminar
             // 
+            this.btnModificarEliminar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnModificarEliminar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnModificarEliminar.FlatAppearance.BorderSize = 0;
             this.btnModificarEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(84)))), ((int)(((byte)(95)))));
@@ -144,6 +168,7 @@ namespace Ejercitos
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(84)))), ((int)(((byte)(95)))));
@@ -183,7 +208,6 @@ namespace Ejercitos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejércitos en el mundo de Espada Negra";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
-            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.pnlLateral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlBotones.ResumeLayout(false);
@@ -201,6 +225,7 @@ namespace Ejercitos
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Button btnFiltro;
     }
 }
 

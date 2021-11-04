@@ -3,70 +3,48 @@ using System.Collections.Generic;
 
 namespace Entidades
 {
-    public class Ejercito<T, U, V>
+    public class Ejercito<T, U> : Pueblo<string>, IFuerzaMilitar
     {
-        private static int idEjercito;
-        private int id;
         private string nombre;
-        private T nacion;
-        private U tipo;
-        private V autonomia;
+        private T tipo;
+        private U autonomia;
         private int cantMaxEjercito;
 
-        public Ejercito(int idEjercito, string nombre, T nacion, U tipo, V autonomia, int cantMaxEjercito)
+        public Ejercito() : base()
         {
-            this.id = idEjercito;
+
+        }
+
+        public Ejercito(int id, string nombre, string nacion, T tipo, U autonomia, int cantMaxEjercito) : base(id, nacion)
+        {
             this.Nombre = nombre;
-            this.Nacion = nacion;
             this.Tipo = tipo;
             this.Autonomia = autonomia;
             this.CantMaxEjercito = cantMaxEjercito;
         }
 
-        public static Ejercito<T, U, V> AltaEjercito(string nombre, T nacion, U tipo, V autonomia, int cantMaxEjercito)
+        public static Ejercito<T, U> AltaEjercito(string nombre, string nacion, T tipo, U autonomia, int cantMaxEjercito)
         {
-            idEjercito++;
+            IdEstatico++;
 
-            Ejercito<T, U, V> ejercitoNuevo = new Ejercito<T, U, V>(idEjercito, nombre, nacion, tipo, autonomia, cantMaxEjercito);
+            Ejercito<T, U> ejercitoNuevo = new Ejercito<T, U>(IdEstatico, nombre, nacion, tipo, autonomia, cantMaxEjercito);
 
             return ejercitoNuevo;
         }
 
-        public static void BajaEjercito(List<Ejercito<T, U, V>> listaEjercitos, Ejercito<T, U, V> ejercito)
+        public static void BajaEjercito(List<Ejercito<T, U>> listaEjercitos, Ejercito<T, U> ejercito)
         {
             listaEjercitos.Remove(ejercito);
         }
 
-        public static int IdEstatico
+        public string Atacar()
         {
-            get
-            {
-                return idEjercito;
-            }
-            set
-            {
-                idEjercito = value;
-            }
+            return $"{this.Nombre} van a las armas para atacar algún enemigo";
         }
 
-        public int Id
+        public string Defender()
         {
-            get
-            {
-                return this.id;
-            }
-        }
-
-        public T Nacion
-        {
-            get
-            {
-                return this.nacion;
-            }
-            set
-            {
-                this.nacion = value;
-            }
+            return $"{this.Nombre} van a las armas y se preparan para defender a {this.Nacion}";
         }
 
         public string Nombre
@@ -81,7 +59,7 @@ namespace Entidades
             }
         }
 
-        public U Tipo
+        public T Tipo
         {
             get
             {
@@ -93,7 +71,7 @@ namespace Entidades
             }
         }
 
-        public V Autonomia
+        public U Autonomia
         {
             get
             {

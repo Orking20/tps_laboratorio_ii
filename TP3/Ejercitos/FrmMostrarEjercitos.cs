@@ -21,13 +21,23 @@ namespace Formularios
 
         private void FrmMostrarEjercitos_Load(object sender, EventArgs e)
         {
-            Ejercito<string, string, string> ejercito;
+            Ejercito<string, string> ejercito;
 
-            for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
+            if (FrmPrincipal.Ejercitos.Count > 0)
             {
-                ejercito = FrmPrincipal.Ejercitos[i];
-                
-                dgvEjercitos.Rows.Add(ejercito.Id, ejercito.Nombre, ejercito.Nacion, ejercito.Tipo, ejercito.Autonomia, ejercito.CantMaxEjercito);
+                for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
+                {
+                    try
+                    {
+                        ejercito = FrmPrincipal.Ejercitos[i];
+
+                        dgvEjercitos.Rows.Add(ejercito.Id, ejercito.Nombre, ejercito.Nacion, ejercito.Tipo, ejercito.Autonomia, ejercito.CantMaxEjercito);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ha ocurrido un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

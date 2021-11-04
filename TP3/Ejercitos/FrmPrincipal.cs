@@ -15,19 +15,14 @@ namespace Ejercitos
     public partial class FrmPrincipal : Form
     {
         private Form formularioActivo = null;
-        private static List<Ejercito<string, string, string>> ejercitos;
+        private static List<Ejercito<string, string>> ejercitos;
         private static bool flagExportar = true;
         private string error;
 
         public FrmPrincipal()
         {
             InitializeComponent();
-        }
-
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
             AbrirFormularioHijo(new FrmPresentacion());
-
             CargaDatos();
         }
 
@@ -51,21 +46,9 @@ namespace Ejercitos
                 this.pnlPrincipal.Tag = formularioHijo;
                 formularioHijo.Show();
             }
-            catch (ObjectDisposedException)
-            {
-                MessageBox.Show("Se ha realizado una operación en un objeto desechado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (InvalidOperationException)
-            {
-                MessageBox.Show("Uno de los argumentos proporcionados a un método no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException)
-            {
-                MessageBox.Show("Uno de los argumentos proporcionados a un método no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             catch (Exception)
             {
-                MessageBox.Show("Ha ocurrido un error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -90,28 +73,22 @@ namespace Ejercitos
         }
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            Archivo.Escribir(ejercitos, out error);
-            flagExportar = true;
-
-            if (error.Length != 0)
-            {
-                MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            AbrirFormularioHijo(new FrmExportar());
+        }
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmFiltro());
         }
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            Ejercitos = Archivo.Leer(out error);
-
-            if (error.Length != 0)
-            {
-                MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            AbrirFormularioHijo(new FrmImportar());
         }
 
         private void CargaDatos()
         {
-            ejercitos = new List<Ejercito<string, string, string>>();
+            ejercitos = new List<Ejercito<string, string>>();
         }
+
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!flagExportar && MessageBox.Show("No guardaste los cambios. Asegurate de hacerlo con el botón 'Exportar'\n¿Estás seguro que quieres salir?", "¿Desea salir?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
@@ -120,7 +97,7 @@ namespace Ejercitos
             }
         }
 
-        public static List<Ejercito<string, string, string>> Ejercitos
+        public static List<Ejercito<string, string>> Ejercitos
         {
             get
             {
@@ -139,5 +116,6 @@ namespace Ejercitos
                 flagExportar = value;
             }
         }
+
     }
 }

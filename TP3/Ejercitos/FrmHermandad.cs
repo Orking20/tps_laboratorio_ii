@@ -42,27 +42,15 @@ namespace Formularios
             }
             catch (PlatformNotSupportedException)
             {
-                MessageBox.Show("Una característica no se ha ejecutado en una plataforma en particular.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (NotSupportedException)
-            {
-                MessageBox.Show("Un método invocado no es compatible o se está intentando leer, buscar o escribir en una secuencia que no admite la funcionalidad invocada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Una característica no se ha podido ejecutar en su plataforma.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ObjectDisposedException)
             {
                 MessageBox.Show("Se ha realizado una operación en un objeto desechado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (InvalidOperationException)
-            {
-                MessageBox.Show("Una llamada a un método no es válida para el estado actual del objeto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             catch (Win32Exception)
             {
                 MessageBox.Show("Código de error Win32", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentNullException)
-            {
-                MessageBox.Show("Se ha pasado una referencia nula a un método que no la acepta como argumento válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception)
             {

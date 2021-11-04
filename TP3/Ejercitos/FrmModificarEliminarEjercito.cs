@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Ejercitos;
+using System.Media;
+using System.IO;
 
 namespace Formularios
 {
@@ -26,30 +28,26 @@ namespace Formularios
                 this.cmbTipo.DataSource = Enum.GetValues(typeof(ETipo));
                 this.cmbAutonomia.DataSource = Enum.GetValues(typeof(EAutonomia));
             }
-            catch (ArgumentNullException)
+            catch (Exception)
             {
-                MessageBox.Show("Se ha pasado una referencia nula a un método que no la acepta como argumento válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (ArgumentException)
-            {
-                MessageBox.Show("Uno de los argumentos proporcionados a un método no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (InvalidOperationException)
-            {
-                MessageBox.Show("Uno de los argumentos proporcionados a un método no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            this.cmbNacion.Text = null;
+            this.cmbTipo.Text = null;
+            this.cmbAutonomia.Text = null;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            Ejercito<string, string, string> ejercito;
+            Ejercito<string, string> ejercito;
 
-            for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
+            if (FrmPrincipal.Ejercitos.Count > 0)
             {
-                ejercito = FrmPrincipal.Ejercitos[i];
-
-                try
+                for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
                 {
+                    ejercito = FrmPrincipal.Ejercitos[i];
+
                     if (this.nudId.Value == ejercito.Id)
                     {
                         this.lblInfo.Visible = false;
@@ -70,23 +68,23 @@ namespace Formularios
                         this.nudNumero.Value = 0;
                     }
                 }
-                catch (ArgumentOutOfRangeException)
-                {
-                    MessageBox.Show("El valor de un argumento está fuera del rango permitido de valores definido por el método invocado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                this.lblInfo.Visible = true;
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Ejercito<string, string, string> ejercito;
+            Ejercito<string, string> ejercito;
 
-            for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
+            if (FrmPrincipal.Ejercitos.Count > 0)
             {
-                ejercito = FrmPrincipal.Ejercitos[i];
-
-                try
+                for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
                 {
+                    ejercito = FrmPrincipal.Ejercitos[i];
+
                     if (this.nudId.Value == ejercito.Id)
                     {
                         if (this.txtNombre.Text != null || this.cmbNacion.Text != null || this.cmbTipo.Text != null || this.cmbAutonomia.Text != null || this.nudNumero.Value != 0)
@@ -97,37 +95,53 @@ namespace Formularios
                             ejercito.Autonomia = this.cmbAutonomia.Text;
                             ejercito.CantMaxEjercito = (int)this.nudNumero.Value;
                             FrmPrincipal.FlagExportar = false;
+                            ReproducirSonidoExito();
                         }
                     }
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    MessageBox.Show("El valor de un argumento está fuera del rango permitido de valores definido por el método invocado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Ejercito<string, string, string> ejercito;
+            Ejercito<string, string> ejercito;
 
-            for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
+            if (FrmPrincipal.Ejercitos.Count > 0)
             {
-                ejercito = FrmPrincipal.Ejercitos[i];
-
-                try
+                for (int i = 0; i < FrmPrincipal.Ejercitos.Count; i++)
                 {
+                    ejercito = FrmPrincipal.Ejercitos[i];
+
                     if (this.nudId.Value == ejercito.Id)
                     {
-                        Ejercito<string, string, string>.BajaEjercito(FrmPrincipal.Ejercitos, ejercito);
+                        Ejercito<string, string>.BajaEjercito(FrmPrincipal.Ejercitos, ejercito);
                         FrmPrincipal.FlagExportar = false;
+                        this.txtNombre.Text = null;
+                        this.cmbNacion.Text = null;
+                        this.cmbTipo.Text = null;
+                        this.cmbAutonomia.Text = null;
+                        this.nudNumero.Value = 0;
+                        ReproducirSonidoExito();
                         break;
                     }
                 }
-                catch (ArgumentOutOfRangeException)
-                {
-                    MessageBox.Show("El valor de un argumento está fuera del rango permitido de valores definido por el método invocado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+        }
+
+        private void ReproducirSonidoExito()
+        {
+            try
+            {
+                SoundPlayer sonido = new SoundPlayer($"{Directory.GetCurrentDirectory()}\\Sonido\\Exito.wav");
+                sonido.Play();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("No tienes permisos para hacer esta acción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha surgido un error.\nAsegúrese de que el archivo 'Exito.wav' se encuentre en la carpeta 'Sonido'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -33,7 +33,7 @@ namespace Formularios
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grpDatos = new System.Windows.Forms.GroupBox();
             this.lblInfo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlId = new System.Windows.Forms.Panel();
             this.nudId = new System.Windows.Forms.NumericUpDown();
             this.lblId = new System.Windows.Forms.Label();
             this.pnlNumero = new System.Windows.Forms.Panel();
@@ -54,7 +54,7 @@ namespace Formularios
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grpDatos.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlId.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             this.pnlNumero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumero)).BeginInit();
@@ -79,7 +79,7 @@ namespace Formularios
             // 
             this.grpDatos.BackColor = System.Drawing.Color.Transparent;
             this.grpDatos.Controls.Add(this.lblInfo);
-            this.grpDatos.Controls.Add(this.panel1);
+            this.grpDatos.Controls.Add(this.pnlId);
             this.grpDatos.Controls.Add(this.pnlNumero);
             this.grpDatos.Controls.Add(this.pnlAutonomia);
             this.grpDatos.Controls.Add(this.pnlTipo);
@@ -104,15 +104,15 @@ namespace Formularios
             this.lblInfo.Text = "No se encontraron coincidencias";
             this.lblInfo.Visible = false;
             // 
-            // panel1
+            // pnlId
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(117)))), ((int)(((byte)(133)))));
-            this.panel1.Controls.Add(this.nudId);
-            this.panel1.Controls.Add(this.lblId);
-            this.panel1.Location = new System.Drawing.Point(6, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 58);
-            this.panel1.TabIndex = 15;
+            this.pnlId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(117)))), ((int)(((byte)(133)))));
+            this.pnlId.Controls.Add(this.nudId);
+            this.pnlId.Controls.Add(this.lblId);
+            this.pnlId.Location = new System.Drawing.Point(6, 42);
+            this.pnlId.Name = "pnlId";
+            this.pnlId.Size = new System.Drawing.Size(162, 58);
+            this.pnlId.TabIndex = 15;
             // 
             // nudId
             // 
@@ -349,8 +349,8 @@ namespace Formularios
             this.Load += new System.EventHandler(this.FrmModificarEliminarEjercito_Load);
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlId.ResumeLayout(false);
+            this.pnlId.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).EndInit();
             this.pnlNumero.ResumeLayout(false);
             this.pnlNumero.PerformLayout();
@@ -387,7 +387,7 @@ namespace Formularios
         private System.Windows.Forms.Panel pnlNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlId;
         private System.Windows.Forms.NumericUpDown nudId;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblInfo;

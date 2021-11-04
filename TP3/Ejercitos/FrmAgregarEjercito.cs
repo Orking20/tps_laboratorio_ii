@@ -27,17 +27,9 @@ namespace Formularios
                 this.cmbTipo.DataSource = Enum.GetValues(typeof(ETipo));
                 this.cmbAutonomia.DataSource = Enum.GetValues(typeof(EAutonomia));
             }
-            catch (ArgumentNullException)
+            catch (Exception)
             {
-                MessageBox.Show("Se ha pasado una referencia nula a un método que no la acepta como argumento válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException)
-            {
-                MessageBox.Show("Uno de los argumentos proporcionados a un método no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (InvalidOperationException)
-            {
-                MessageBox.Show("Uno de los argumentos proporcionados a un método no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             this.cmbNacion.Text = null;
@@ -55,9 +47,9 @@ namespace Formularios
             string nacionStr;
             string tipoStr;
             string autonomiaStr;
-            Ejercito<string, string, string> ejercitoNuevo;
+            Ejercito<string, string> ejercitoNuevo;
 
-            if (Ejercito<ENacion, ETipo, EAutonomia>.ValidarNombre(this.txtNombre.Text) &&
+            if (Ejercito<ETipo, EAutonomia>.ValidarNombre(this.txtNombre.Text) &&
                 int.TryParse(this.nudNumero.Text, out cantMaxEjercito))
             {
                 nombre = this.txtNombre.Text;
@@ -69,7 +61,7 @@ namespace Formularios
                 tipoStr = tipo.ToString();
                 autonomiaStr = autonomia.ToString();
 
-                ejercitoNuevo = Ejercito<string, string, string>.AltaEjercito(nombre, nacionStr, tipoStr, autonomiaStr, cantMaxEjercito);
+                ejercitoNuevo = Ejercito<string, string>.AltaEjercito(nombre, nacionStr, tipoStr, autonomiaStr, cantMaxEjercito);
                 FrmPrincipal.Ejercitos.Add(ejercitoNuevo);
                 FrmPrincipal.FlagExportar = false;  
 

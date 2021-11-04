@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public enum ENacion
+    interface IFuerzaMilitar
     {
-        Dormenia,
-        Eride,
-        Harrassia,
-        Tirtie,
-        Gunear,
-        Najshet,
-        Tribus
+        string Atacar();
+        string Defender();
     }
 }
