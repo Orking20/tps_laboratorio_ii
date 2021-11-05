@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Todas las naciones existentes en el mundo de Esapada Negra
+    /// </summary>
     public enum ENacion
     {
         Dormenia,
@@ -17,6 +20,9 @@ namespace Entidades
         Tribus
     }
 
+    /// <summary>
+    /// Todos los tipos de ejércitos existentes en el mundo de Esapada Negra
+    /// </summary>
     public enum ETipo
     {
         Infanteria_ligera,
@@ -32,6 +38,9 @@ namespace Entidades
         Mulenevor
     }
 
+    /// <summary>
+    /// Los posibles niveles de autonomía
+    /// </summary>
     public enum EAutonomia
     {
         Desconocida,

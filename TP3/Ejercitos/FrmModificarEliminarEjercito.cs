@@ -16,10 +16,19 @@ namespace Formularios
 {
     public partial class FrmModificarEliminarEjercito : Form
     {
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmModificarEliminarEjercito()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Carga datos a los comboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmModificarEliminarEjercito_Load(object sender, EventArgs e)
         {
             try
@@ -38,6 +47,11 @@ namespace Formularios
             this.cmbAutonomia.Text = null;
         }
 
+        /// <summary>
+        /// Muestra el ejército coincidente con el ID seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             Ejercito<string, string> ejercito;
@@ -75,6 +89,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Modifica un ejército ya existente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Ejercito<string, string> ejercito;
@@ -102,6 +121,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Elimina un ejército ya existente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Ejercito<string, string> ejercito;
@@ -128,6 +152,9 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando al usuario que se modificó correctamente
+        /// </summary>
         private void ReproducirSonidoExito()
         {
             try

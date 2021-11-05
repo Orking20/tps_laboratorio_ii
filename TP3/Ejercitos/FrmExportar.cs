@@ -18,11 +18,19 @@ namespace Formularios
     {
         private string error;
 
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmExportar()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Guarda los datos de una lista en un archivo .csv
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnScv_Click(object sender, EventArgs e)
         {
             Archivo.EscribirCsv(FrmPrincipal.Ejercitos, "Ejercitos.csv", out error);
@@ -38,6 +46,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Guarda los datos de una lista en un archivo .xml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnXml_Click(object sender, EventArgs e)
         {
             Archivo.EscribirXml(FrmPrincipal.Ejercitos, out error);
@@ -53,6 +66,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Guarda los datos de una lista en un archivo .json
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnJson_Click(object sender, EventArgs e)
         {
             Archivo.EscribirJson(FrmPrincipal.Ejercitos, out error);
@@ -68,6 +86,9 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando al usuario que se guardó correctamente
+        /// </summary>
         private void ReproducirSonidoExito()
         {
             try

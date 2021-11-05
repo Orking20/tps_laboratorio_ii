@@ -14,11 +14,20 @@ namespace Formularios
 {
     public partial class FrmHermandad : Form
     {
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmHermandad()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Redirecciona al usuario a una página web donde puede ver la fuente de donde se sacaron los datos
+        /// usados en esta aplicación
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void llbFuente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.llbFuente.LinkVisited = true;

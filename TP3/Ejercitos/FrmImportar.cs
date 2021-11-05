@@ -18,11 +18,19 @@ namespace Formularios
     {
         string error;
 
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmImportar()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Obtiene los datos de un archivo .csv y los guarda en una lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCsv_Click(object sender, EventArgs e)
         {
             FrmPrincipal.Ejercitos = Archivo.LeerCsv(out error);
@@ -37,6 +45,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Obtiene los datos de un archivo .xml y los guarda en una lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnXml_Click(object sender, EventArgs e)
         {
             FrmPrincipal.Ejercitos = Archivo.LeerXml(out error);
@@ -51,6 +64,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Obtiene los datos de un archivo .json y los guarda en una lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnJson_Click(object sender, EventArgs e)
         {
             FrmPrincipal.Ejercitos = Archivo.LeerJson(out error);
@@ -65,6 +83,9 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando al usuario que se leyeron correctamente los datos
+        /// </summary>
         private void ReproducirSonidoExito()
         {
             try

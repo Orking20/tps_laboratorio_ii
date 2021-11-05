@@ -10,11 +10,23 @@ namespace Entidades
         private U autonomia;
         private int cantMaxEjercito;
 
+        /// <summary>
+        /// Constructor vacío para generar archivos xml
+        /// </summary>
         public Ejercito() : base()
         {
 
         }
 
+        /// <summary>
+        /// Inicializa los datos de un ejército
+        /// </summary>
+        /// <param name="id">ID del ejército</param>
+        /// <param name="nombre">Nombre del ejército</param>
+        /// <param name="nacion">Nación del ejército</param>
+        /// <param name="tipo">Tipo de ejército</param>
+        /// <param name="autonomia">Autonomía del ejército</param>
+        /// <param name="cantMaxEjercito">Cantidad máxima de tropas individuales que tiene el ejército</param>
         public Ejercito(int id, string nombre, string nacion, T tipo, U autonomia, int cantMaxEjercito) : base(id, nacion)
         {
             this.Nombre = nombre;
@@ -23,6 +35,15 @@ namespace Entidades
             this.CantMaxEjercito = cantMaxEjercito;
         }
 
+        /// <summary>
+        /// Crea un nuevo ejército
+        /// </summary>
+        /// <param name="nombre">Nombre del ejército</param>
+        /// <param name="nacion">Nación del ejército</param>
+        /// <param name="tipo">Tipo de ejército</param>
+        /// <param name="autonomia">Autonomía del ejército</param>
+        /// <param name="cantMaxEjercito">Cantidad máxima de tropas individuales que tiene el ejército</param>
+        /// <returns>Retorna el ejército creado</returns>
         public static Ejercito<T, U> AltaEjercito(string nombre, string nacion, T tipo, U autonomia, int cantMaxEjercito)
         {
             IdEstatico++;
@@ -32,21 +53,37 @@ namespace Entidades
             return ejercitoNuevo;
         }
 
+        /// <summary>
+        /// Elimina un ejército de una lista pasada por parámetros
+        /// </summary>
+        /// <param name="listaEjercitos">Lista de ejércitos</param>
+        /// <param name="ejercito">Ejército a eliminar</param>
         public static void BajaEjercito(List<Ejercito<T, U>> listaEjercitos, Ejercito<T, U> ejercito)
         {
             listaEjercitos.Remove(ejercito);
         }
 
+        /// <summary>
+        /// Método de la interfaz IFuerzaMilitar que devuelve un texto informando que el ejército va a atacar
+        /// </summary>
+        /// <returns>Retorna el texto</returns>
         public string Atacar()
         {
             return $"{this.Nombre} van a las armas para atacar algún enemigo";
         }
 
+        /// <summary>
+        /// Método de la interfaz IFuerzaMilitar que devuelve un texto informando que el ejército va a defender
+        /// </summary>
+        /// <returns>Retorna el texto</returns>
         public string Defender()
         {
             return $"{this.Nombre} van a las armas y se preparan para defender a {this.Nacion}";
         }
 
+        /// <summary>
+        /// Obtiene o devuelve el nombre
+        /// </summary>
         public string Nombre
         {
             get
@@ -55,10 +92,16 @@ namespace Entidades
             }
             set
             {
-                this.nombre = value;
+                if (Validar.Nombre(value))
+                {
+                    this.nombre = value;
+                }
             }
         }
 
+        /// <summary>
+        /// Obtiene o devuelve el tipo
+        /// </summary>
         public T Tipo
         {
             get
@@ -71,6 +114,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Obtiene o devuelve la autonomia
+        /// </summary>
         public U Autonomia
         {
             get
@@ -83,6 +129,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Obtiene o devuelve cantidad máxima de tropas individuales del ejército
+        /// </summary>
         public int CantMaxEjercito
         {
             get
@@ -93,45 +142,6 @@ namespace Entidades
             {
                 this.cantMaxEjercito = value;
             }
-        }
-
-        /// <summary>
-        /// Valida que la cadena ingresada sea un nombre válido
-        /// </summary>
-        /// <param name="nombre">Cadena a validar</param>
-        /// <returns>Retorna true si la cadena es un nombre válido o false si no</returns>
-        public static bool ValidarNombre(string nombre)
-        {
-            bool retorno;
-
-            retorno = EsSoloLetras(nombre);
-
-            return retorno;
-        }
-
-        /// <summary>
-        /// Valida que una cadena contenga solo letras
-        /// </summary>
-        /// <param name="palabra">Palabra a validar</param>
-        /// <returns>Retorna true si la cadena tiene solo letras o false si no</returns>
-        private static bool EsSoloLetras(string palabra)
-        {
-            bool retorno = false;
-
-            foreach (char letra in palabra)
-            {
-                if (!Char.IsLetter(letra) && letra != ' ')
-                {
-                    retorno = false;
-                    break;
-                }
-                else
-                {
-                    retorno = true;
-                }
-            }
-
-            return retorno;
         }
     }
 }

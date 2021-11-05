@@ -16,11 +16,19 @@ namespace Formularios
 {
     public partial class FrmFiltro : Form
     {
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmFiltro()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Filtra por ejércitos de Dormenia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDormenios_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -40,6 +48,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos de Eridie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEridios_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -59,6 +72,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos de Harrassia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHarrasianos_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -78,6 +96,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos Guneares
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuneares_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -97,6 +120,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos de infantería ligera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfanteriaLigera_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -116,6 +144,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos con tropas individuales de igual o mayor tamaño a 5000
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMayores5000_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -135,6 +168,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos de infantería entre 1000 y 5000 tropas individuales
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfanteriaEntre1000Y5000_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -154,6 +192,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos de caballería de buena autonomía
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCaballeriaBuenaAutonomia_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -173,6 +216,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Filtra por ejércitos de autonomía completa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAutonomiaCompleta_Click(object sender, EventArgs e)
         {
             List<Ejercito<string, string>> ejercitosFiltrados;
@@ -192,6 +240,9 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Reproduce un sonido indicando al usuario que se guardó correctamente
+        /// </summary>
         private void ReproducirSonidoExito()
         {
             try

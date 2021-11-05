@@ -12,6 +12,12 @@ namespace Entidades
 {
     public static class Archivo
     {
+        /// <summary>
+        /// Guarda los datos de todos los ejercitos almacenados en la lista pasada por parametro en un archivo .csv
+        /// </summary>
+        /// <param name="ejercitos">Lista con todos los ejercitos a guardar</param>
+        /// <param name="nombreArchivo">Nombre del archivo donde se guardaran los datos</param>
+        /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
         public static void EscribirCsv(List<Ejercito<string, string>> ejercitos, string nombreArchivo, out string error)
         {
             string path;
@@ -58,6 +64,11 @@ namespace Entidades
             error = stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Obtiene los datos del archivo "Ejercitos.csv" y los almacena en una lista
+        /// </summary>
+        /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
+        /// <returns>Retorna la lista donde se encuentran los datos obtenidos</returns>
         public static List<Ejercito<string, string>> LeerCsv(out string error)
         {
             string path;
@@ -144,6 +155,11 @@ namespace Entidades
             return ejercitos;
         }
 
+        /// <summary>
+        /// Guarda los datos de todos los ejercitos almacenados en la lista pasada por parametro en un archivo .xml
+        /// </summary>
+        /// <param name="ejercitos">Lista con todos los ejercitos a guardar</param>
+        /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
         public static void EscribirXml(List<Ejercito<string, string>> ejercitos, out string error)
         {
             string path;
@@ -189,6 +205,11 @@ namespace Entidades
             error = stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Obtiene los datos del archivo "Ejercitos.xml" y los almacena en una lista
+        /// </summary>
+        /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
+        /// <returns>Retorna la lista donde se encuentran los datos obtenidos</returns>
         public static List<Ejercito<string, string>> LeerXml(out string error)
         {
             string path;
@@ -241,6 +262,11 @@ namespace Entidades
             return ejercitos;
         }
 
+        /// <summary>
+        /// Guarda los datos de todos los ejercitos almacenados en la lista pasada por parametro en un archivo .json
+        /// </summary>
+        /// <param name="ejercitos">Lista con todos los ejercitos a guardar</param>
+        /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
         public static void EscribirJson(List<Ejercito<string, string>> ejercitos, out string error)
         {
             string path;
@@ -284,6 +310,11 @@ namespace Entidades
             error = stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Obtiene los datos del archivo "Ejercitos.json" y los almacena en una lista
+        /// </summary>
+        /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
+        /// <returns>Retorna la lista donde se encuentran los datos obtenidos</returns>
         public static List<Ejercito<string, string>> LeerJson(out string error)
         {
             string path;

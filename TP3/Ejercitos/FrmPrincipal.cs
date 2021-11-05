@@ -17,13 +17,24 @@ namespace Ejercitos
         private Form formularioActivo = null;
         private static List<Ejercito<string, string>> ejercitos;
         private static bool flagExportar = true;
-        private string error;
 
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmPrincipal()
         {
             InitializeComponent();
-            AbrirFormularioHijo(new FrmPresentacion());
+        }
+
+        /// <summary>
+        /// Prepara la aplicación inicializando la lista de ejércitos y preparando el formulario principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
             CargaDatos();
+            AbrirFormularioHijo(new FrmPresentacion());
         }
 
         /// <summary>
@@ -52,43 +63,89 @@ namespace Ejercitos
             }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new FrmAgregarEjercito());
-        }
-
+        /// <summary>
+        /// Abre el formulario principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void picLogo_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmPresentacion());
         }
 
+        /// <summary>
+        /// Abre el formulario para agregar ejércitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmAgregarEjercito());
+        }
+
+        /// <summary>
+        /// Abre el formulario para modificar o eliminar ejércitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificarEliminar_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmModificarEliminarEjercito());
         }
 
+        /// <summary>
+        /// Abre el formulario para mostrar ejércitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmMostrarEjercitos());
         }
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new FrmExportar());
-        }
+
+        /// <summary>
+        /// Abre el formulario para filtrar ejércitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmFiltro());
         }
+
+        /// <summary>
+        /// Abre el formulario para exportar ejércitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmExportar());
+        }
+
+        /// <summary>
+        /// Abre el formulario para importar ejércitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImportar_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmImportar());
         }
 
+        /// <summary>
+        /// Inicializa la lista de ejércitos
+        /// </summary>
         private void CargaDatos()
         {
             ejercitos = new List<Ejercito<string, string>>();
         }
 
+        /// <summary>
+        /// Avisa antes de salir, de ser así, que los cambios no se guardaron y da la opción al usuario de volver a guardarlos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!flagExportar && MessageBox.Show("No guardaste los cambios. Asegurate de hacerlo con el botón 'Exportar'\n¿Estás seguro que quieres salir?", "¿Desea salir?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
@@ -97,6 +154,9 @@ namespace Ejercitos
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece la lista de ejércitos
+        /// </summary>
         public static List<Ejercito<string, string>> Ejercitos
         {
             get
@@ -109,6 +169,9 @@ namespace Ejercitos
             }
         }
 
+        /// <summary>
+        /// Establece el valor de flagExportar
+        /// </summary>
         public static bool FlagExportar
         {
             set
@@ -116,6 +179,5 @@ namespace Ejercitos
                 flagExportar = value;
             }
         }
-
     }
 }

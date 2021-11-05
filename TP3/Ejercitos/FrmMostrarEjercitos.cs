@@ -14,11 +14,19 @@ namespace Formularios
 {
     public partial class FrmMostrarEjercitos : Form
     {
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmMostrarEjercitos()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Muestra todos los ejércitos importados en la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMostrarEjercitos_Load(object sender, EventArgs e)
         {
             Ejercito<string, string> ejercito;

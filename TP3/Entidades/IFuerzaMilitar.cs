@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Contiene métodos para atacar y defender usados por Ejercito y Milicia
+    /// </summary>
     interface IFuerzaMilitar
     {
         string Atacar();

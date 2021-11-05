@@ -12,17 +12,28 @@ namespace Entidades
         private int id;
         private T nacion;
 
+        /// <summary>
+        /// Constructor vacío para generar archivos xml
+        /// </summary>
         public Pueblo()
         {
 
         }
 
+        /// <summary>
+        /// Inicializa los datos de un ejército
+        /// </summary>
+        /// <param name="idEstatico">ID de Pueblo</param>
+        /// <param name="nacion">Nación de Pueblo</param>
         public Pueblo(int idEstatico, T nacion)
         {
             this.id = idEstatico;
-            this.nacion = nacion;
+            this.Nacion = nacion;
         }
 
+        /// <summary>
+        /// Obtiene o establece el ID estático de Pueblo
+        /// </summary>
         public static int IdEstatico
         {
             get
@@ -35,6 +46,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece el ID de Pueblo
+        /// </summary>
         public int Id
         {
             get
@@ -47,6 +61,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece la nación de Pueblo
+        /// </summary>
         public T Nacion
         {
             get
@@ -55,7 +72,10 @@ namespace Entidades
             }
             set
             {
-                this.nacion = value;
+                if (Validar.Nombre(value.ToString()))
+                {
+                    this.nacion = value;
+                }
             }
         }
     }

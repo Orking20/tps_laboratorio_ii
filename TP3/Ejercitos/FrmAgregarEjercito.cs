@@ -14,11 +14,19 @@ namespace Formularios
 {
     public partial class FrmAgregarEjercito : Form
     {
+        /// <summary>
+        /// Carga los componentes gráficos
+        /// </summary>
         public FrmAgregarEjercito()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga datos a los comboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAgregarEjercito_Load(object sender, EventArgs e)
         {
             try
@@ -37,6 +45,11 @@ namespace Formularios
             this.cmbAutonomia.Text = null;
         }
 
+        /// <summary>
+        /// Agrega un ejército a la lista de ejércitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string nombre;
@@ -49,7 +62,7 @@ namespace Formularios
             string autonomiaStr;
             Ejercito<string, string> ejercitoNuevo;
 
-            if (Ejercito<ETipo, EAutonomia>.ValidarNombre(this.txtNombre.Text) &&
+            if (Validar.Nombre(this.txtNombre.Text) &&
                 int.TryParse(this.nudNumero.Text, out cantMaxEjercito))
             {
                 nombre = this.txtNombre.Text;
