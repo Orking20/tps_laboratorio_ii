@@ -75,6 +75,25 @@ namespace Formularios
                 autonomiaStr = autonomia.ToString();
 
                 ejercitoNuevo = Ejercito<string, string>.AltaEjercito(nombre, nacionStr, tipoStr, autonomiaStr, cantMaxEjercito);
+
+                if (FrmPrincipal.Ejercitos.Count > 0)
+                {
+                    foreach (Ejercito<string, string> auxEjercito in FrmPrincipal.Ejercitos)
+                    {
+                        try
+                        {
+                            if (ejercitoNuevo.Nombre == auxEjercito.Nombre)
+                            {
+                                throw new EjercitoRepetidoException("Ya hay un ejército con el mismo nombre existente");
+                            }
+                        }
+                        catch (EjercitoRepetidoException ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
                 FrmPrincipal.Ejercitos.Add(ejercitoNuevo);
                 FrmPrincipal.FlagExportar = false;  
 

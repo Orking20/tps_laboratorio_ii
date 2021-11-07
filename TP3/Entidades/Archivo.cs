@@ -69,7 +69,7 @@ namespace Entidades
         /// </summary>
         /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
         /// <returns>Retorna la lista donde se encuentran los datos obtenidos</returns>
-        public static List<Ejercito<string, string>> LeerCsv(out string error)
+        public static List<Ejercito<string, string>> LeerCsv(string nombreArchivo, out string error)
         {
             string path;
             string datosEjercito;
@@ -82,7 +82,7 @@ namespace Entidades
 
             try
             {
-                path = Path.Combine(Directory.GetCurrentDirectory(), "Ejercitos.csv");
+                path = Path.Combine(Directory.GetCurrentDirectory(), nombreArchivo);
 
                 using (StreamReader lector = new StreamReader(path))
                 {
@@ -282,7 +282,10 @@ namespace Entidades
                     Directory.CreateDirectory(path);
                 }
 
-                textoSerializado = JsonSerializer.Serialize(ejercitos);
+                JsonSerializerOptions opciones = new JsonSerializerOptions();
+                opciones.WriteIndented = true;
+
+                textoSerializado = JsonSerializer.Serialize(ejercitos, opciones);
                 File.WriteAllText($"{path}\\EjercitosJson.json", textoSerializado);
 
                 foreach (Ejercito<string, string> ejercito in ejercitos)

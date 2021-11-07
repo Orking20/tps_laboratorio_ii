@@ -17,7 +17,7 @@ namespace Entidades
         {
             bool retorno;
 
-            retorno = EsSoloLetras(nombre) && nombre != string.Empty;
+            retorno = EsSoloLetras(nombre);
 
             return retorno;
         }

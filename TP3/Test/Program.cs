@@ -9,9 +9,10 @@ namespace Test
         static void Main(string[] args)
         {
             List<Ejercito<string, string>> listaEjercitos = new List<Ejercito<string, string>>();
+            List<Ejercito<string, string>> listaFiltrada = new List<Ejercito<string, string>>();
             string error;
 
-            Ejercito<string, string> ejercito = new Ejercito<string, string>(1, "Ejercito regular", "Dormenia", "Infanteria ligera", "Alta", 40000);
+            Ejercito<string, string> ejercito = new Ejercito<string, string>(42, "Ejercito regular", "Dormenia", "Infanteria ligera", "Alta", 40000);
             Milicia milicia = new Milicia(1, ENacion.Gunear, "Marinero");
 
             Console.WriteLine(ejercito.Atacar());
@@ -20,11 +21,25 @@ namespace Test
             Console.WriteLine(milicia.Atacar());
             Console.WriteLine(milicia.Defender());
 
-            listaEjercitos.Add(Ejercito<string, string>.AltaEjercito("Legión del sur", "Eridie", "Infanteria media", "Casi completa", 10000));
+            listaEjercitos = Archivo.LeerCsv("EjercitosConsola.csv", out error);
 
+            listaEjercitos.Add(Ejercito<string, string>.AltaEjercito("Legión del sur", "Dormenia", "Infanteria media", "Casi completa", 10000));
             listaEjercitos.Add(ejercito);
 
-            Archivo.EscribirCsv(listaEjercitos, "Ejercitos.csv", out error);
+            Console.WriteLine("\nLista de ejercitos:");
+            foreach (Ejercito<string, string> auxEjercito in listaEjercitos)
+            {
+                Console.WriteLine(auxEjercito.Nombre);
+            }
+
+            listaFiltrada = Filtro.Eridios(listaEjercitos);
+            Console.WriteLine("\nLista filtrada por ejercitos con 5000 o más unidades:");
+            foreach (Ejercito<string, string> auxEjercito in listaFiltrada)
+            {
+                Console.WriteLine(auxEjercito.Nombre);
+            }
+
+            Archivo.EscribirCsv(listaEjercitos, "EjercitosConsola.csv", out error);
         }
     }
 }

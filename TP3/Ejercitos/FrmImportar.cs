@@ -33,7 +33,7 @@ namespace Formularios
         /// <param name="e"></param>
         private void btnCsv_Click(object sender, EventArgs e)
         {
-            FrmPrincipal.Ejercitos = Archivo.LeerCsv(out error);
+            FrmPrincipal.Ejercitos = Archivo.LeerCsv("Ejercitos.csv", out error);
 
             if (error.Length != 0)
             {

@@ -93,7 +93,7 @@ namespace Ejercitos
             this.btnImportar.Location = new System.Drawing.Point(0, 345);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(194, 69);
-            this.btnImportar.TabIndex = 4;
+            this.btnImportar.TabIndex = 6;
             this.btnImportar.Text = "Importar";
             this.btnImportar.UseVisualStyleBackColor = true;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
@@ -110,7 +110,7 @@ namespace Ejercitos
             this.btnExportar.Location = new System.Drawing.Point(0, 276);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(194, 69);
-            this.btnExportar.TabIndex = 3;
+            this.btnExportar.TabIndex = 5;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseVisualStyleBackColor = true;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
@@ -127,7 +127,7 @@ namespace Ejercitos
             this.btnFiltro.Location = new System.Drawing.Point(0, 207);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(194, 69);
-            this.btnFiltro.TabIndex = 5;
+            this.btnFiltro.TabIndex = 4;
             this.btnFiltro.Text = "Filtro";
             this.btnFiltro.UseVisualStyleBackColor = true;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
@@ -144,7 +144,7 @@ namespace Ejercitos
             this.btnMostrar.Location = new System.Drawing.Point(0, 138);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(194, 69);
-            this.btnMostrar.TabIndex = 2;
+            this.btnMostrar.TabIndex = 3;
             this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
@@ -161,7 +161,7 @@ namespace Ejercitos
             this.btnModificarEliminar.Location = new System.Drawing.Point(0, 69);
             this.btnModificarEliminar.Name = "btnModificarEliminar";
             this.btnModificarEliminar.Size = new System.Drawing.Size(194, 69);
-            this.btnModificarEliminar.TabIndex = 1;
+            this.btnModificarEliminar.TabIndex = 2;
             this.btnModificarEliminar.Text = "Modificar/Eliminar";
             this.btnModificarEliminar.UseVisualStyleBackColor = true;
             this.btnModificarEliminar.Click += new System.EventHandler(this.btnModificarEliminar_Click);
@@ -178,7 +178,7 @@ namespace Ejercitos
             this.btnAgregar.Location = new System.Drawing.Point(0, 0);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(194, 69);
-            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);

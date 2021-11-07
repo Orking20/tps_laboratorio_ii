@@ -140,7 +140,7 @@ namespace Formularios
             0});
             this.nudNumero.Name = "nudNumero";
             this.nudNumero.Size = new System.Drawing.Size(145, 23);
-            this.nudNumero.TabIndex = 10;
+            this.nudNumero.TabIndex = 5;
             // 
             // pnlAutonomia
             // 
@@ -171,7 +171,7 @@ namespace Formularios
             this.cmbAutonomia.Location = new System.Drawing.Point(3, 23);
             this.cmbAutonomia.Name = "cmbAutonomia";
             this.cmbAutonomia.Size = new System.Drawing.Size(145, 23);
-            this.cmbAutonomia.TabIndex = 8;
+            this.cmbAutonomia.TabIndex = 4;
             // 
             // pnlTipo
             // 
@@ -202,7 +202,7 @@ namespace Formularios
             this.cmbTipo.Location = new System.Drawing.Point(3, 23);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(145, 23);
-            this.cmbTipo.TabIndex = 6;
+            this.cmbTipo.TabIndex = 3;
             // 
             // pnlNacion
             // 
@@ -233,7 +233,7 @@ namespace Formularios
             this.cmbNacion.Location = new System.Drawing.Point(3, 23);
             this.cmbNacion.Name = "cmbNacion";
             this.cmbNacion.Size = new System.Drawing.Size(145, 23);
-            this.cmbNacion.TabIndex = 4;
+            this.cmbNacion.TabIndex = 2;
             // 
             // pnlNombre
             // 
