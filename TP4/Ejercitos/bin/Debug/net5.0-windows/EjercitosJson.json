@@ -1,0 +1,274 @@
+[
+  {
+    "Nombre": "Ejercito regular",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Alta",
+    "CantMaxEjercito": 40000,
+    "Id": 1,
+    "Nacion": "Dormenia"
+  },
+  {
+    "Nombre": "Legion del sur",
+    "Tipo": "Infanteria_media_de_asalto",
+    "Autonomia": "Casi_completa",
+    "CantMaxEjercito": 10000,
+    "Id": 2,
+    "Nacion": "Dormenia"
+  },
+  {
+    "Nombre": "Guardia real",
+    "Tipo": "Infanteria_pesada",
+    "Autonomia": "Baja",
+    "CantMaxEjercito": 800,
+    "Id": 3,
+    "Nacion": "Dormenia"
+  },
+  {
+    "Nombre": "Hermanos iluminados",
+    "Tipo": "Infanteria_media_de_asalto",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 1000,
+    "Id": 4,
+    "Nacion": "Dormenia"
+  },
+  {
+    "Nombre": "Cabeller\u00EDa ligera regular",
+    "Tipo": "Caballeria_ligera",
+    "Autonomia": "Baja",
+    "CantMaxEjercito": 1000,
+    "Id": 5,
+    "Nacion": "Dormenia"
+  },
+  {
+    "Nombre": "Cabeller\u00EDa pesada regular",
+    "Tipo": "Caballeria_pesada_de_asalto",
+    "Autonomia": "Baja",
+    "CantMaxEjercito": 1500,
+    "Id": 6,
+    "Nacion": "Dormenia"
+  },
+  {
+    "Nombre": "Primera cohorte",
+    "Tipo": "Infanteria_pesada",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 950,
+    "Id": 7,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Segunda cohorte",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 900,
+    "Id": 8,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Tercera cohorte",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 1100,
+    "Id": 9,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Cuarta cohorte",
+    "Tipo": "Infanteria_pesada",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 4500,
+    "Id": 10,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Quinta cohorte",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 900,
+    "Id": 11,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Sexta cohorte",
+    "Tipo": "Infanteria_pesada",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 950,
+    "Id": 12,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Septima cohorte",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 1000,
+    "Id": 13,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Octava cohorte",
+    "Tipo": "Infanteria_de_soporte",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 850,
+    "Id": 14,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Novena cohorte",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 900,
+    "Id": 15,
+    "Nacion": "Eride"
+  },
+  {
+    "Nombre": "Carsij",
+    "Tipo": "Caballeria_media",
+    "Autonomia": "Baja",
+    "CantMaxEjercito": 3000,
+    "Id": 16,
+    "Nacion": "Harrassia"
+  },
+  {
+    "Nombre": "Caballer\u00EDa sariana",
+    "Tipo": "Caballeria_ligera",
+    "Autonomia": "Alta",
+    "CantMaxEjercito": 2000,
+    "Id": 17,
+    "Nacion": "Harrassia"
+  },
+  {
+    "Nombre": "Defensores de puesto avanzado",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Alta",
+    "CantMaxEjercito": 2300,
+    "Id": 18,
+    "Nacion": "Harrassia"
+  },
+  {
+    "Nombre": "Zobagar adia",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 800,
+    "Id": 19,
+    "Nacion": "Tirtie"
+  },
+  {
+    "Nombre": "Zobagar zitakoda",
+    "Tipo": "Mulenevor",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 80,
+    "Id": 20,
+    "Nacion": "Tirtie"
+  },
+  {
+    "Nombre": "Zobagar Urke",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 600,
+    "Id": 21,
+    "Nacion": "Tirtie"
+  },
+  {
+    "Nombre": "Exaltados de Armur\u00E9sevor",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Alta",
+    "CantMaxEjercito": 400,
+    "Id": 22,
+    "Nacion": "Tirtie"
+  },
+  {
+    "Nombre": "Guerreros del clan del oso",
+    "Tipo": "Infanteria_media",
+    "Autonomia": "Aceptable",
+    "CantMaxEjercito": 1240,
+    "Id": 23,
+    "Nacion": "Gunear"
+  },
+  {
+    "Nombre": "Milicia del clan de la orca",
+    "Tipo": "Infanteria_media",
+    "Autonomia": "Baja",
+    "CantMaxEjercito": 4000,
+    "Id": 24,
+    "Nacion": "Gunear"
+  },
+  {
+    "Nombre": "Caballer\u00EDa del clan del carnero",
+    "Tipo": "Caballeria_media",
+    "Autonomia": "Casi_completa",
+    "CantMaxEjercito": 500,
+    "Id": 25,
+    "Nacion": "Gunear"
+  },
+  {
+    "Nombre": "Exploradores del clan del \u00E1guila",
+    "Tipo": "Arqueria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 1000,
+    "Id": 26,
+    "Nacion": "Gunear"
+  },
+  {
+    "Nombre": "Leva del clan del lobo",
+    "Tipo": "Infanteria_media",
+    "Autonomia": "Moderada",
+    "CantMaxEjercito": 9840,
+    "Id": 27,
+    "Nacion": "Gunear"
+  },
+  {
+    "Nombre": "Guardia del heredero",
+    "Tipo": "Infanteria_media",
+    "Autonomia": "Poca",
+    "CantMaxEjercito": 1350,
+    "Id": 28,
+    "Nacion": "Najshet"
+  },
+  {
+    "Nombre": "Furias",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Desconocida",
+    "CantMaxEjercito": 5430,
+    "Id": 29,
+    "Nacion": "Najshet"
+  },
+  {
+    "Nombre": "Tahlaned de la serpiente",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 800,
+    "Id": 30,
+    "Nacion": "Tribus"
+  },
+  {
+    "Nombre": "Tahlaned del ant\u00EDlope",
+    "Tipo": "Caballeria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 700,
+    "Id": 31,
+    "Nacion": "Tribus"
+  },
+  {
+    "Nombre": "Tahlaned de la iguana",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 500,
+    "Id": 32,
+    "Nacion": "Tribus"
+  },
+  {
+    "Nombre": "Tahlaned de la ara\u00F1a",
+    "Tipo": "Infanteria_ligera",
+    "Autonomia": "Completa",
+    "CantMaxEjercito": 600,
+    "Id": 33,
+    "Nacion": "Tribus"
+  },
+  {
+    "Nombre": "Tahlaned del escorpi\u00F3n",
+    "Tipo": "Infanteria_media",
+    "Autonomia": "Casi_completa",
+    "CantMaxEjercito": 400,
+    "Id": 34,
+    "Nacion": "Tribus"
+  }
+]

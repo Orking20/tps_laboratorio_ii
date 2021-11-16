@@ -1,0 +1,9 @@
+ID;NOMBRE;NACION;TIPO;AUTONOMIA;CANTIDAD
+4;Hermanos iluminados;Dormenia;Infanteria_media_de_asalto;Completa;1000
+9;Tercera cohorte;Eride;Infanteria_ligera;Completa;1100
+10;Cuarta cohorte;Eride;Infanteria_pesada;Completa;4500
+13;Septima cohorte;Eride;Infanteria_ligera;Completa;1000
+18;Defensores de puesto avanzado;Harrassia;Infanteria_ligera;Alta;2300
+23;Guerreros del clan del oso;Gunear;Infanteria_media;Aceptable;1240
+24;Milicia del clan de la orca;Gunear;Infanteria_media;Baja;4000
+28;Guardia del heredero;Najshet;Infanteria_media;Poca;1350
