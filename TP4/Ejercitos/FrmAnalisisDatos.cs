@@ -46,7 +46,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Formularios
             LimpiarCeldas();
             dividendo = this.ejercitosFiltrados.Count;
             this.porcentaje = CalcularPorcentaje(dividendo);
-            dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
+            this.dgvEjercitos.Rows.Add(this.criterio, this.porcentaje);
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Formularios
         {
             try
             {
-                dgvEjercitos.Rows.Clear();
+                this.dgvEjercitos.Rows.Clear();
             }
             catch (Exception)
             {

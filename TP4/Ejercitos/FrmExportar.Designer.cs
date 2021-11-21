@@ -37,6 +37,7 @@ namespace Formularios
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnExportarTodo = new System.Windows.Forms.Button();
             this.btnCsv = new System.Windows.Forms.Button();
+            this.btnVerCambiosSinGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picTitulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,6 +122,7 @@ namespace Formularios
             this.btnExportarTodo.TabIndex = 18;
             this.btnExportarTodo.Text = "Exportar en los 3 archivos";
             this.btnExportarTodo.UseVisualStyleBackColor = false;
+            this.btnExportarTodo.Click += new System.EventHandler(this.btnExportarTodo_Click);
             // 
             // btnCsv
             // 
@@ -137,12 +139,29 @@ namespace Formularios
             this.btnCsv.UseVisualStyleBackColor = false;
             this.btnCsv.Click += new System.EventHandler(this.btnCsv_Click);
             // 
+            // btnVerCambiosSinGuardar
+            // 
+            this.btnVerCambiosSinGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(117)))), ((int)(((byte)(133)))));
+            this.btnVerCambiosSinGuardar.FlatAppearance.BorderSize = 0;
+            this.btnVerCambiosSinGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(84)))), ((int)(((byte)(95)))));
+            this.btnVerCambiosSinGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(147)))), ((int)(((byte)(162)))));
+            this.btnVerCambiosSinGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCambiosSinGuardar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVerCambiosSinGuardar.Location = new System.Drawing.Point(438, 441);
+            this.btnVerCambiosSinGuardar.Name = "btnVerCambiosSinGuardar";
+            this.btnVerCambiosSinGuardar.Size = new System.Drawing.Size(253, 44);
+            this.btnVerCambiosSinGuardar.TabIndex = 19;
+            this.btnVerCambiosSinGuardar.Text = "Ver cambios sin guardar";
+            this.btnVerCambiosSinGuardar.UseVisualStyleBackColor = false;
+            this.btnVerCambiosSinGuardar.Click += new System.EventHandler(this.btnVerCambiosSinGuardar_Click);
+            // 
             // FrmExportar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1121, 658);
+            this.Controls.Add(this.btnVerCambiosSinGuardar);
             this.Controls.Add(this.btnExportarTodo);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lblAyuda);
@@ -168,5 +187,6 @@ namespace Formularios
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Button btnExportarTodo;
         private System.Windows.Forms.Button btnCsv;
+        private System.Windows.Forms.Button btnVerCambiosSinGuardar;
     }
 }

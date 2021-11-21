@@ -4,6 +4,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Alta",
     "CantMaxEjercito": 40000,
+    "FlagExportar": true,
     "Id": 1,
     "Nacion": "Dormenia"
   },
@@ -12,6 +13,7 @@
     "Tipo": "Infanteria_media_de_asalto",
     "Autonomia": "Casi_completa",
     "CantMaxEjercito": 10000,
+    "FlagExportar": true,
     "Id": 2,
     "Nacion": "Dormenia"
   },
@@ -20,6 +22,7 @@
     "Tipo": "Infanteria_pesada",
     "Autonomia": "Baja",
     "CantMaxEjercito": 800,
+    "FlagExportar": true,
     "Id": 3,
     "Nacion": "Dormenia"
   },
@@ -28,6 +31,7 @@
     "Tipo": "Infanteria_media_de_asalto",
     "Autonomia": "Completa",
     "CantMaxEjercito": 1000,
+    "FlagExportar": true,
     "Id": 4,
     "Nacion": "Dormenia"
   },
@@ -36,6 +40,7 @@
     "Tipo": "Caballeria_ligera",
     "Autonomia": "Baja",
     "CantMaxEjercito": 1000,
+    "FlagExportar": true,
     "Id": 5,
     "Nacion": "Dormenia"
   },
@@ -44,6 +49,7 @@
     "Tipo": "Caballeria_pesada_de_asalto",
     "Autonomia": "Baja",
     "CantMaxEjercito": 1500,
+    "FlagExportar": true,
     "Id": 6,
     "Nacion": "Dormenia"
   },
@@ -52,6 +58,7 @@
     "Tipo": "Infanteria_pesada",
     "Autonomia": "Completa",
     "CantMaxEjercito": 950,
+    "FlagExportar": true,
     "Id": 7,
     "Nacion": "Eride"
   },
@@ -60,6 +67,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 900,
+    "FlagExportar": true,
     "Id": 8,
     "Nacion": "Eride"
   },
@@ -68,6 +76,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 1100,
+    "FlagExportar": true,
     "Id": 9,
     "Nacion": "Eride"
   },
@@ -76,6 +85,7 @@
     "Tipo": "Infanteria_pesada",
     "Autonomia": "Completa",
     "CantMaxEjercito": 4500,
+    "FlagExportar": true,
     "Id": 10,
     "Nacion": "Eride"
   },
@@ -84,6 +94,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 900,
+    "FlagExportar": true,
     "Id": 11,
     "Nacion": "Eride"
   },
@@ -92,6 +103,7 @@
     "Tipo": "Infanteria_pesada",
     "Autonomia": "Completa",
     "CantMaxEjercito": 950,
+    "FlagExportar": true,
     "Id": 12,
     "Nacion": "Eride"
   },
@@ -100,6 +112,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 1000,
+    "FlagExportar": true,
     "Id": 13,
     "Nacion": "Eride"
   },
@@ -108,6 +121,7 @@
     "Tipo": "Infanteria_de_soporte",
     "Autonomia": "Completa",
     "CantMaxEjercito": 850,
+    "FlagExportar": true,
     "Id": 14,
     "Nacion": "Eride"
   },
@@ -116,6 +130,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 900,
+    "FlagExportar": true,
     "Id": 15,
     "Nacion": "Eride"
   },
@@ -124,6 +139,7 @@
     "Tipo": "Caballeria_media",
     "Autonomia": "Baja",
     "CantMaxEjercito": 3000,
+    "FlagExportar": true,
     "Id": 16,
     "Nacion": "Harrassia"
   },
@@ -132,6 +148,7 @@
     "Tipo": "Caballeria_ligera",
     "Autonomia": "Alta",
     "CantMaxEjercito": 2000,
+    "FlagExportar": true,
     "Id": 17,
     "Nacion": "Harrassia"
   },
@@ -140,6 +157,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Alta",
     "CantMaxEjercito": 2300,
+    "FlagExportar": true,
     "Id": 18,
     "Nacion": "Harrassia"
   },
@@ -148,6 +166,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 800,
+    "FlagExportar": true,
     "Id": 19,
     "Nacion": "Tirtie"
   },
@@ -156,6 +175,7 @@
     "Tipo": "Mulenevor",
     "Autonomia": "Completa",
     "CantMaxEjercito": 80,
+    "FlagExportar": true,
     "Id": 20,
     "Nacion": "Tirtie"
   },
@@ -164,6 +184,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 600,
+    "FlagExportar": true,
     "Id": 21,
     "Nacion": "Tirtie"
   },
@@ -172,6 +193,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Alta",
     "CantMaxEjercito": 400,
+    "FlagExportar": true,
     "Id": 22,
     "Nacion": "Tirtie"
   },
@@ -180,6 +202,7 @@
     "Tipo": "Infanteria_media",
     "Autonomia": "Aceptable",
     "CantMaxEjercito": 1240,
+    "FlagExportar": true,
     "Id": 23,
     "Nacion": "Gunear"
   },
@@ -188,6 +211,7 @@
     "Tipo": "Infanteria_media",
     "Autonomia": "Baja",
     "CantMaxEjercito": 4000,
+    "FlagExportar": true,
     "Id": 24,
     "Nacion": "Gunear"
   },
@@ -196,6 +220,7 @@
     "Tipo": "Caballeria_media",
     "Autonomia": "Casi_completa",
     "CantMaxEjercito": 500,
+    "FlagExportar": true,
     "Id": 25,
     "Nacion": "Gunear"
   },
@@ -204,6 +229,7 @@
     "Tipo": "Arqueria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 1000,
+    "FlagExportar": true,
     "Id": 26,
     "Nacion": "Gunear"
   },
@@ -212,6 +238,7 @@
     "Tipo": "Infanteria_media",
     "Autonomia": "Moderada",
     "CantMaxEjercito": 9840,
+    "FlagExportar": true,
     "Id": 27,
     "Nacion": "Gunear"
   },
@@ -220,6 +247,7 @@
     "Tipo": "Infanteria_media",
     "Autonomia": "Poca",
     "CantMaxEjercito": 1350,
+    "FlagExportar": true,
     "Id": 28,
     "Nacion": "Najshet"
   },
@@ -228,6 +256,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Desconocida",
     "CantMaxEjercito": 5430,
+    "FlagExportar": true,
     "Id": 29,
     "Nacion": "Najshet"
   },
@@ -236,6 +265,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 800,
+    "FlagExportar": true,
     "Id": 30,
     "Nacion": "Tribus"
   },
@@ -244,6 +274,7 @@
     "Tipo": "Caballeria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 700,
+    "FlagExportar": true,
     "Id": 31,
     "Nacion": "Tribus"
   },
@@ -252,6 +283,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 500,
+    "FlagExportar": true,
     "Id": 32,
     "Nacion": "Tribus"
   },
@@ -260,6 +292,7 @@
     "Tipo": "Infanteria_ligera",
     "Autonomia": "Completa",
     "CantMaxEjercito": 600,
+    "FlagExportar": true,
     "Id": 33,
     "Nacion": "Tribus"
   },
@@ -268,6 +301,7 @@
     "Tipo": "Infanteria_media",
     "Autonomia": "Casi_completa",
     "CantMaxEjercito": 400,
+    "FlagExportar": true,
     "Id": 34,
     "Nacion": "Tribus"
   }

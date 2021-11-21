@@ -22,9 +22,11 @@ namespace Test
             Console.WriteLine(milicia.Defender());
 
             listaEjercitos = Archivo.LeerCsv("EjercitosConsola.csv", out error);
+            listaEjercitos = BaseDeDatos.Select(out error);
 
             listaEjercitos.Add(Ejercito<string, string>.AltaEjercito("Legión del sur", "Dormenia", "Infanteria media", "Casi completa", 10000));
             listaEjercitos.Add(ejercito);
+            BaseDeDatos.Insert(ejercito, out error);
 
             Console.WriteLine("\nLista de ejercitos:");
             foreach (Ejercito<string, string> auxEjercito in listaEjercitos)
@@ -32,7 +34,7 @@ namespace Test
                 Console.WriteLine(auxEjercito.Nombre);
             }
 
-            listaFiltrada = Filtro.Eridios(listaEjercitos);
+            listaFiltrada = Filtro.EjercitosMayoresA5000(listaEjercitos);
             Console.WriteLine("\nLista filtrada por ejercitos con 5000 o más unidades:");
             foreach (Ejercito<string, string> auxEjercito in listaFiltrada)
             {

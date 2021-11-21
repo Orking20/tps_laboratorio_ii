@@ -62,6 +62,7 @@ namespace Formularios
             string autonomiaStr;
             Ejercito<string, string> ejercitoNuevo;
             string error;
+            bool flag = true;
 
             if (Validar.Nombre(this.txtNombre.Text) &&
                 int.TryParse(this.nudNumero.Text, out cantMaxEjercito))
@@ -85,27 +86,39 @@ namespace Formularios
                         {
                             if (ejercitoNuevo.Nombre == auxEjercito.Nombre)
                             {
+                                flag = false;
                                 throw new EjercitoRepetidoException("Ya hay un ejército con el mismo nombre existente");
+                            }
+                            else
+                            {
+                                flag = true;
                             }
                         }
                         catch (EjercitoRepetidoException ex)
                         {
                             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
                         }
                     }
                 }
 
-                BaseDeDatos.Insert(ejercitoNuevo, out error);
+                if (flag)
+                {
+                    BaseDeDatos.Insert(ejercitoNuevo, out error);
 
-                if (error.Length != 0)
-                {
-                    MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    FrmPrincipal.Ejercitos.Add(ejercitoNuevo);
-                    FrmPrincipal.FlagExportar = false;
-                    MessageBox.Show($"Se ha creado el nuevo ejército: {nombre}", "Nuevo ejército creado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (error.Length != 0)
+                    {
+                        MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        ejercitoNuevo.FlagExportar = false;
+                        ejercitoNuevo.EventoExportacion += Ejercito<string, string>.MostrarEjercito;
+
+                        FrmPrincipal.Ejercitos.Add(ejercitoNuevo);
+                        FrmPrincipal.FlagExportar = false;
+                        MessageBox.Show($"Se ha creado el nuevo ejército: {nombre}", "Nuevo ejército creado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             else

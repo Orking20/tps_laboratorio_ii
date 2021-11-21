@@ -8,8 +8,6 @@ namespace Entidades
 {
     public class EjercitoRepetidoException : Exception
     {
-        private Exception excepcion;
-
         public EjercitoRepetidoException(string mensaje) : this(mensaje, null)
         {
             

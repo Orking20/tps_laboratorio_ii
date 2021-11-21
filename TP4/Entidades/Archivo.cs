@@ -160,7 +160,7 @@ namespace Entidades
         /// </summary>
         /// <param name="ejercitos">Lista con todos los ejercitos a guardar</param>
         /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
-        public static void EscribirXml(List<Ejercito<string, string>> ejercitos, out string error)
+        public static void EscribirXml(List<Ejercito<string, string>> ejercitos, string nombreArchivo, out string error)
         {
             string path;
             StringBuilder stringBuilder = new StringBuilder();
@@ -174,7 +174,7 @@ namespace Entidades
                     Directory.CreateDirectory(path);
                 }
 
-                using (XmlTextWriter escritor = new XmlTextWriter($"{path}\\EjercitosXml.xml", Encoding.UTF8))
+                using (XmlTextWriter escritor = new XmlTextWriter(Path.Combine(path, nombreArchivo), Encoding.UTF8))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(List<Ejercito<string, string>>));
                     serializer.Serialize(escritor, ejercitos);
@@ -267,7 +267,7 @@ namespace Entidades
         /// </summary>
         /// <param name="ejercitos">Lista con todos los ejercitos a guardar</param>
         /// <param name="error">Cadena donde se almacenará el error ocurrido, si es que hay error</param>
-        public static void EscribirJson(List<Ejercito<string, string>> ejercitos, out string error)
+        public static void EscribirJson(List<Ejercito<string, string>> ejercitos, string nombreArchivo, out string error)
         {
             string path;
             string textoSerializado;
@@ -286,7 +286,7 @@ namespace Entidades
                 opciones.WriteIndented = true;
 
                 textoSerializado = JsonSerializer.Serialize(ejercitos, opciones);
-                File.WriteAllText($"{path}\\EjercitosJson.json", textoSerializado);
+                File.WriteAllText(Path.Combine(path, nombreArchivo), textoSerializado);
 
                 foreach (Ejercito<string, string> ejercito in ejercitos)
                 {

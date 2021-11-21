@@ -20,7 +20,7 @@ namespace Entidades
         /// </summary>
         static BaseDeDatos()
         {
-            connection = new SqlConnection("Data Source = ULTRON; Database = TP3; Trusted_Connection = True;");
+            connection = new SqlConnection("Data Source = ULTRON; Database = TP4_Luchetti_Capalbo_Mateo; Trusted_Connection = True;");
             command = new SqlCommand();
             command.CommandType = CommandType.Text;
             command.Connection = connection;

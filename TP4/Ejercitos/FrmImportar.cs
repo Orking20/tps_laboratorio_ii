@@ -41,8 +41,8 @@ namespace Formularios
             }
             else
             {
-                lblInfo.Visible = true;
-                lblInfo.Text = "CSV importado exitosamente";
+                this.Visible = true;
+                this.lblInfo.Text = "CSV importado exitosamente";
                 ReproducirSonidoExito();
             }
         }
@@ -62,8 +62,8 @@ namespace Formularios
             }
             else
             {
-                lblInfo.Visible = true;
-                lblInfo.Text = "XML importado exitosamente";
+                this.lblInfo.Visible = true;
+                this.lblInfo.Text = "XML importado exitosamente";
                 ReproducirSonidoExito();
             }
         }
@@ -83,8 +83,8 @@ namespace Formularios
             }
             else
             {
-                lblInfo.Visible = true;
-                lblInfo.Text = "JSON importado exitosamente";
+                this.lblInfo.Visible = true;
+                this.lblInfo.Text = "JSON importado exitosamente";
                 ReproducirSonidoExito();
             }
         }
