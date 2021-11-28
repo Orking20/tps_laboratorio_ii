@@ -1,0 +1,15 @@
+ID;NOMBRE;NACION;TIPO;AUTONOMIA;CANTIDAD
+1;Ejercito regular;Dormenia;Infanteria_ligera;Alta;40000
+8;Segunda cohorte;Eride;Infanteria_ligera;Completa;900
+9;Tercera cohorte;Eride;Infanteria_ligera;Completa;1100
+11;Quinta cohorte;Eride;Infanteria_ligera;Completa;900
+13;Septima cohorte;Eride;Infanteria_ligera;Completa;1000
+15;Novena cohorte;Eride;Infanteria_ligera;Completa;900
+18;Defensores de puesto avanzado;Harrassia;Infanteria_ligera;Alta;2300
+19;Zobagar adia;Tirtie;Infanteria_ligera;Completa;800
+21;Zobagar Urke;Tirtie;Infanteria_ligera;Completa;600
+22;Exaltados de Armurésevor;Tirtie;Infanteria_ligera;Alta;400
+29;Furias;Najshet;Infanteria_ligera;Desconocida;5430
+30;Tahlaned de la serpiente;Tribus;Infanteria_ligera;Completa;800
+32;Tahlaned de la iguana;Tribus;Infanteria_ligera;Completa;500
+33;Tahlaned de la araña;Tribus;Infanteria_ligera;Completa;600

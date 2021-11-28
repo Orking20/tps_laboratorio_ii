@@ -1,0 +1,7 @@
+ID;NOMBRE;NACION;TIPO;AUTONOMIA;CANTIDAD
+1;Ejercito regular;Dormenia;Infanteria_ligera;Alta;40000
+2;Legion del sur;Dormenia;Infanteria_media_de_asalto;Casi_completa;10000
+3;Guardia real;Dormenia;Infanteria_pesada;Baja;800
+4;Hermanos iluminados;Dormenia;Infanteria_media_de_asalto;Completa;1000
+5;Cabellería ligera regular;Dormenia;Caballeria_ligera;Baja;1000
+6;Cabellería pesada regular;Dormenia;Caballeria_pesada_de_asalto;Baja;1500
